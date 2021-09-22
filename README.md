@@ -3,7 +3,7 @@ git clone https://github.com/amanraj-iit/My-Doc.git
 
 make a virtualenv --> pip install virtualenv --> virtualenv testEnv --> cd testEnv/Scripts/activate
 
-cd Python-Week
+cd My-Doc
 
 pip install requirements.txt
 
