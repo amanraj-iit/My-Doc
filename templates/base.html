@@ -1,0 +1,108 @@
+{% load static from staticfiles%}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+            rel="stylesheet"
+        />
+        <title>MY DOC</title>
+    </head>
+    <body class="bg-gray-900">
+        <style>
+            a:hover {
+                cursor: pointer;
+                transition: ease 0.35s;
+                border: white solid 1px;
+                border-radius: 12px;
+                padding: 5px;
+            }
+            a {
+                color: white;
+            }
+        </style>
+        <header class="bg-red-500 body-font">
+            <div
+                class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center"
+            >
+                <div
+                    class="flex title-font font-medium items-center text-white mb-4 md:mb-0"
+                >
+                    <img
+                        id="logo"
+                        src="{% static 'heart.png' %}"
+                        alt="img"
+                        width="40px"
+                        height="40px"
+                    />
+                    <span class="ml-3 text-xl font-bold text-2xl"
+                        >My Doc</span
+                    >
+                </div>
+                <nav
+                    class="md:ml-auto flex flex-wrap items-center text-base justify-center"
+                >
+                    <a
+                        class="mr-5 hover:text-black text-lg font-semibold"
+                        href="{% url 'Home' %}"
+                        >Home</a
+                    >
+                    <a
+                        class="mr-5 hover:text-black text-lg font-semibold"
+                        href="{% url 'Heart:check' %}"
+                        >Check Up</a
+                    >
+                    <a
+                        class="mr-5 hover:text-black text-lg font-semibold"
+                        href="{% url 'Contact' %}"
+                        >Contact Us</a
+                    >
+                </nav>
+            </div>
+        </header>
+        <section class="text-gray-400 body-font">
+            <div
+                class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center"
+            >
+                <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 md:mb-0 mb-10">
+                    <img
+                        class="object-cover object-center rounded"
+                        alt="hero"
+                        src="{% static 'heart2.png' %}"
+                    />
+                </div>
+                <div
+                    class="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center"
+                >
+                    <h1
+                        class="title-font sm:text-4xl text-3xl mb-4 font-large text-white font-serif"
+                    >
+                        My Doc<br />
+                        <br class="hidden lg:inline-block" />Your personal Heart
+                        Assistant
+                    </h1>
+                    <p class="mb-8 leading-relaxed font-sans">
+                        My Doc is your own personal heart Assistant. It
+                        uses Machine Learning to analyse and predict whether you
+                        have a heart disease or not. This algorithm is trained
+                        against multiple cases so to provide you with correct
+                        and accurate prediction.
+                    </p>
+                    <div class="flex justify-center">
+                        <form action="{% url 'Heart:check' %}">
+                            <button
+                                type="submit"
+                                class="inline-flex text-white bg-blue-500 border-0 py-2 px-6 focus:outline-none hover:bg-blue-600 rounded text-lg"
+                            >
+                                Get Started
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>
