@@ -16,4 +16,4 @@ python manage.py makemigrations
 
 python manage.py runserver
 
-Hope you will like it.
+Hope you will like it..
